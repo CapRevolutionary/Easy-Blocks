@@ -1,4 +1,4 @@
-# 📺 Easy Blocks - Random Version
+# 📺 Easy Blocks Lazy Cuts Version
 
 This Python script compiles a series of shows, bumpers, commercials, and promos into a single stitched video file with consistent formatting (720p/30fps), transitions. It's ideal for creating retro-style TV blocks or automated video compilations.
 
