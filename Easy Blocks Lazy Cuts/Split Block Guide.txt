@@ -1,0 +1,53 @@
+Welcome to Easy Blocks Random Split Version
+This version is completly automated meaning other than setting up your folders you dont need to do anything else pretty cool huh.
+so lets get to the steps 
+
+Step 1. Make sure you have Python 3 installed, then open a terminal and run:
+
+bash
+pip install moviepy tqdm
+
+Step 2. Install FFmpeg and ensure ffmpeg and ffprobe are available in your system's PATH.
+
+Now thats set up lets get onto how this all works 
+
+Firstly make sure all files used are .mkv or .mp4 also ensure all are x264 format sadly the only way to know if something isnt is after the block builds it will be corrupted 
+
+Secondly if you open the .py with notepad and find the select_videos_for_duration section you can change it to your chosen amount i use 5 minutes its in seconds so 300 seconds
+
+
+Finally you can also change the number of shows you want to use i use 4 but have tried with 6 it will only take 1 show from each folder so if you want the chance of the same show more than
+once you need to split it into 2 folders we will address this later 
+
+Now
+
+Step 3. Add your content to each folder 
+
+Bumpers - This should house Idents or things you want to display before and at the end of each break they're randomly selected so go crazy with how many u add to the folder
+
+Commercials - Speaks for itself just place the commercials you want to use here
+
+Promos - Again this speaks for itself and videos you want as promos go here
+
+Shows - Now here you want to have a folder then inside that folder all that shows videos for example Yu-Gi-Oh! would be my folder and inside that would just be every video file no sub folders
+do this for each show mine has 30 shows and when run it will pick 4 episodes from 4 random shows from the 30 folders 
+
+Temp - This holds all the files after it processes them i would delete everything in here after your block is complete there is also a .txt file in there that will show you what your block is 
+made up of 
+
+Now this is all set up in the address bar highlight everything and type cmd once the command prompt opens type python splitmkv.py and enter 
+if all is set up correctly it will begin for a 4 show block it takes me around 30 minutes this hasn't been tested on other pcs so speeds may vary 
+
+The way this works is it takes an episode and at the half way point in the runtime will split it into 2 parts leading to Part 1 - Bumper - Commercials/Promos - Bumper - Part2 the cut happens
+at the exact half way point so it could be mid sentence or fight sadly outside of manually cutting episodes this is the only automated way it still works perfectly fine 
+
+Once the process is complete the command prompt will say Done and u can close it head to the Output folder and your new block will be sitting there waiting for you simply run it as many times 
+as you want change the promos commercials bumpers shows as long as you follow the instructions you can make whatever
+
+Now for some finally information want to change the amount of shows from 4 open the .py in notepad and crtl + f and search for this  selected_shows = random.sample(show_folders, min(len(show_folders), 4))
+simply change that number from 4 to whatever you want i haven't gone above 6 so speeds and other things will vary and impact on your pc also
+
+Want to change the time for commercials maybe you want 3 minutes or maybe 5 same thing as above but search for def select_videos_for_duration(folders, min_duration_sec=180): and change the seconds
+to your desired amount same warning as above
+
+Enjoy block builder 
