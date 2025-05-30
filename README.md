@@ -24,9 +24,9 @@ Place your videos into the following folders relative to the script:
 ├── Bumpers/
 ├── Commercials/
 ├── Promos/
-├── Shows/
-│   ├── Show1/
-│   └── Show2/
+├── Shows/             # Show Folders In Here Only No Sub Folders
+│   ├── Show1/         # Just Video Files In Here No Folders
+│   └── Show2/         # Just Video Files In Here No Folders
 ├── Output/            # Final video gets saved here
 ├── Temp/              # Intermediate files go here
 └── splitmkv.py
@@ -62,9 +62,9 @@ It will:
 
 ## 🛠 Customization
 
-- **Minimum duration for ad segments**: Change the `min_duration_sec` value in `select_videos_for_duration()`.
+- **Minimum duration for ad segments**: Change the sec= in def select_videos_for_duration(folders, min_duration_sec=180)
 - **Video quality settings**: Modify FFmpeg parameters in `convert_to_720p_30fps()` or `concat_videos_ffmpeg()`.
-
+- **Number of shows used**:  Change the number from 4 in the row selected_shows = random.sample(show_folders, min(len(show_folders), 4))
 ---
 
 ## 📝 Notes
@@ -72,7 +72,7 @@ It will:
 - The script processes only `.mp4` and `.mkv` files by default.
 - It skips incompatible clips or clips with unreadable metadata.
 - It checks stream compatibility before deciding between stream-copy or re-encode concatenation.
-
+- Must be in x264 format
 ---
 
 ## 📌 License
